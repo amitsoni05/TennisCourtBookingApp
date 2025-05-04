@@ -14,8 +14,8 @@ namespace TennisCourtBookingApp.Common.Utility
         /// <returns></returns>
         public static string DecryptAES(string cipherText)
         {
-            var keybytes = Encoding.UTF8.GetBytes("8080808080808080");
-            var iv = Encoding.UTF8.GetBytes("8080808080808080");
+            var keybytes = Encoding.UTF8.GetBytes("enteryourkey");
+            var iv = Encoding.UTF8.GetBytes("enteryourkey");
 
             var encrypted = Convert.FromBase64String(cipherText);
             var decriptedFromJavascript = DecryptStringFromBytes(encrypted, keybytes, iv);
