@@ -1,0 +1,103 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = TennisCourtBookingApp.Web
+build_property.RootNamespace = TennisCourtBookingApp.Web
+build_property.ProjectDir = E:\Amit_Soni\ProjectAmit\TennisCourtBookingApp\TennisCourtBookingApp.Web\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = E:\Amit_Soni\ProjectAmit\TennisCourtBookingApp\TennisCourtBookingApp.Web
+build_property._RazorSourceGeneratorDebug = 
+
+[E:/Amit_Soni/ProjectAmit/TennisCourtBookingApp/TennisCourtBookingApp.Web/Views/Home/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Amit_Soni/ProjectAmit/TennisCourtBookingApp/TennisCourtBookingApp.Web/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Amit_Soni/ProjectAmit/TennisCourtBookingApp/TennisCourtBookingApp.Web/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Amit_Soni/ProjectAmit/TennisCourtBookingApp/TennisCourtBookingApp.Web/Views/Home/_ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfUmVzZXRQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Amit_Soni/ProjectAmit/TennisCourtBookingApp/TennisCourtBookingApp.Web/Views/Home/_UserLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfVXNlckxvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Amit_Soni/ProjectAmit/TennisCourtBookingApp/TennisCourtBookingApp.Web/Views/Home/_UserPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfVXNlclBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Amit_Soni/ProjectAmit/TennisCourtBookingApp/TennisCourtBookingApp.Web/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Amit_Soni/ProjectAmit/TennisCourtBookingApp/TennisCourtBookingApp.Web/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Amit_Soni/ProjectAmit/TennisCourtBookingApp/TennisCourtBookingApp.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Amit_Soni/ProjectAmit/TennisCourtBookingApp/TennisCourtBookingApp.Web/Views/TennisCourt/BookingDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVubmlzQ291cnRcQm9va2luZ0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Amit_Soni/ProjectAmit/TennisCourtBookingApp/TennisCourtBookingApp.Web/Views/TennisCourt/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVubmlzQ291cnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Amit_Soni/ProjectAmit/TennisCourtBookingApp/TennisCourtBookingApp.Web/Views/TennisCourt/PreviousBookings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVubmlzQ291cnRcUHJldmlvdXNCb29raW5ncy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Amit_Soni/ProjectAmit/TennisCourtBookingApp/TennisCourtBookingApp.Web/Views/TennisCourt/_AddCourt.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVubmlzQ291cnRcX0FkZENvdXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Amit_Soni/ProjectAmit/TennisCourtBookingApp/TennisCourtBookingApp.Web/Views/User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Amit_Soni/ProjectAmit/TennisCourtBookingApp/TennisCourtBookingApp.Web/Views/User/ListedCourt.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMaXN0ZWRDb3VydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Amit_Soni/ProjectAmit/TennisCourtBookingApp/TennisCourtBookingApp.Web/Views/User/UserDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VyRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Amit_Soni/ProjectAmit/TennisCourtBookingApp/TennisCourtBookingApp.Web/Views/User/_BookingCourtPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxfQm9va2luZ0NvdXJ0UGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Amit_Soni/ProjectAmit/TennisCourtBookingApp/TennisCourtBookingApp.Web/Views/User/_UserProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxfVXNlclByb2ZpbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Amit_Soni/ProjectAmit/TennisCourtBookingApp/TennisCourtBookingApp.Web/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Amit_Soni/ProjectAmit/TennisCourtBookingApp/TennisCourtBookingApp.Web/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Amit_Soni/ProjectAmit/TennisCourtBookingApp/TennisCourtBookingApp.Web/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-8j3fwevz9b

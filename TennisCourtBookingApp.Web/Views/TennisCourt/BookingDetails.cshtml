@@ -1,0 +1,100 @@
+﻿
+@model TennisCourtBookingViewModel
+@{
+    Layout = "_AdminLayout";
+}
+
+
+<br />
+<div class="row">
+    <div class="col-2">
+    </div>
+    <div class="col-8">
+        <a class="nav-link text-dark btn btn-outline-primary" style="font-weight:bold;font-size:large;float:right;" onclick="TennisCourtBookingApp.TennisCourt.PreviousBookings()">Show Previous Bookings</a>
+        @*<a asp-action="PreviousBookings" asp-controller="TennisCourt"> Previous Bookings </a>*@
+
+        <h2>User Booking Details</h2>
+        <br />
+        <div class="input-group mb-3 row">
+            <div class="col-4">
+                <label>Search : </label>
+                <input type="text" id="BookingExtraSearch" style="background: transparent;background-color:transparent;" onkeyup="TennisCourtBookingApp.TennisCourt.GetBookingListUser(1,this)" />
+            </div>
+
+
+            <div class="col-4">
+                <label>Status</label>
+                <select id="Status" name="status" style="background-color:yellowgreen;" onchange="TennisCourtBookingApp.TennisCourt.GetBookingListUser(this)">
+                    <option value="1">All</option>
+                    <option value="2">Pending</option>
+                    <option value="3">Reject</option>
+                    <option value="4">Confirm</option>
+                </select>
+            </div>
+        </div>
+
+        <table class="table " id="AllUserBookings">
+
+            <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>Tennis Court Name</th>
+                    <th>Tennis Court Address</th>
+                    <th>Booking Date</th>
+                    <th>Booking Time</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+
+
+                </tr>
+            </thead>
+
+
+        </table>
+    </div>
+</div>
+
+
+<script src="~/js/Themes/jquery.min.js" asp-append-version="true"></script>
+@section Scripts{
+    @*<script src="~/js/Custom/TennisCourtBookingApp.js"></script>
+
+        <script src="~/js/Custom/TennisCourtBookingApp.Common.js"></script>*@
+    <script src="~/js/Custom/TennisCourtBookingApp.TennisCourt.js" asp-append-version="true"></script>
+    @*<script src="~/js/Custom/TennisCourtBookingApp.User.js"></script>
+        <script src="~/js/Custom/TennisCourtBookingApp.Booking.js"></script>*@
+    <script>
+        $(document).ready(function () {
+            debugger;
+            //int status = TennisCourtBookingApp.Common.Utility.BookingStatus.All;
+            TennisCourtBookingApp.TennisCourt.GetBookingListUser(1);
+        });
+    </script>
+
+}
+@*<script>
+        $(document).ready(function () {
+            $("#AllUserBookings").DataTable({
+                "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+                "pageLength": 5 // Display 5 entries per page initially
+
+            });
+            $('#AllUserBookings_filter ').css({
+                'float': 'left',
+                'margin-left': '10px',
+                'padding-right': '20px'
+            });
+
+            $('#AllUserBookings_length').css({
+                'float': 'right'
+            });
+        });
+    </script>*@
+<div class="modal" id="modalShow" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content" id="modalContent">
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,96 @@
+﻿@model TennisCourtBookingViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_AdminLayout";
+}
+
+
+@*<button type="button" value="Add Student" class="btn btn-primary" onclick=" AddStudent()">Add Student</button>*@
+
+@*<label for="courses">Status</label>
+    <select id="student" name="status" onchange="ChangeStatus(this)">
+        <option id="ShowAll" value="ShowAll">Show All</option>
+        <option id="ShowActive" value="ShowActive">Show Active</option>
+        <option id="ShowInActive" value="ShowInActive">Show InActive</option>
+    </select>*@
+
+<div class="row">
+    <div class="col-2">
+    </div>
+    <div class="col-8">
+        <h2>Previous Bookings</h2><br />
+        <button class="btn  btn-dark mr-2 mt-2" onclick="TennisCourtBookingApp.TennisCourt.BulkBookingDetailDownload()"><i class="ti-download"></i>Booking List</button>
+        
+        <table class="table align-content-center border-5 " id="PreviousBookings" style="background: transparent;text-decoration:none;background-color:transparent;">
+            <thead class="bg-light">
+                <tr class="bg-success">
+                    <th>User Name</th>
+                    <th> Tennis Court Name</th>
+                    <th> Tennis Court Address</th>
+                    <th>Booking Date</th>
+                    <th>Booking Time</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody class="bg-light">
+                @{
+                    foreach (var item in Model.UserBookingDetailsModels)
+                    {
+                        DateTime bookingDate = item.BookingDate ?? new DateTime(2020, 1, 1);
+                        TimeSpan bookingTime = item.BookingTime ?? new TimeSpan(12, 0, 0);
+
+                        <tr>
+                            <td>@item.UserName</td>
+                            <td>@item.TennisCourtName</td>
+                            <td>@item.TennisCourtAddress</td>
+                            <td style="height:20px;">@bookingDate.ToString("yyyy-MM-dd")</td>
+                            <td> @(DateTime.Today.Add(bookingTime).ToString("hh:mm tt"))</td>
+                            @if (item.StatusString == "Reject")
+                            {
+                                <td> <span class="badge badge-danger">Reject</span></td>
+                            }
+                            @if (item.StatusString == "Pending")
+                            {
+                                <td> <span class="badge badge-warning">Pending</span></td>
+                            }
+                            @if (item.StatusString == "Confirm")
+                            {
+                                <td> <span class="badge badge-success">Confirm</span></td>
+                            }
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+ </div>
+    @section Scripts{
+        <script src="~/js/Custom/TennisCourtBookingApp.js" asp-append-version="true"></script>
+        @*<script src="~/js/Custom/TennisCourtBookingApp.Common.js" asp-append-version="true"></script>*@
+
+        @*<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>*@
+        <script>
+            $(document).ready(function () {
+                $('#PreviousBookings').DataTable({
+                    "lengthMenu": [5, 10, 20],
+                    "pageLength": 10,// Display 5 entries per page initially
+                    "bLengthChange": true
+                });
+                // Initialize DataTable
+            });
+        </script>
+
+    }
+
+
+
+
+    @*<div id="modalShow" class="modal fade bs-example-modal-lg" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" id="modalContent">
+
+                </div>
+            </div>
+        </div>*@

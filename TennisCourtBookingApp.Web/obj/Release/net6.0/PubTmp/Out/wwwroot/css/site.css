@@ -1,0 +1,67 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+#container {
+/*     background-color: black; */
+    width: 1600px;
+/*    position:fixed;
+    top:90%;*/
+}
+#moveball{
+    width: 1500px;
+    height: 50px;
+/*    background-color: blue;*/
+/*    animation: moveBall 8s linear infinite;*/
+    position: relative;
+    
+}
+#tenni1 {
+    width: 50px;
+    transform: rotate(-0.25turn);
+}
+#tenni2 {
+    width: 50px;
+    transform: rotate(-0.25turn);
+}
+#imge {
+
+    animation: moveBall 5s linear infinite;
+    position: relative;
+    display: block; /* Ensure the image is treated as a block element */
+}
+
+@keyframes moveBall {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(1500%, 0);
+    }
+
+    50% {
+        transform: translate(2950%, 0);
+    }
+
+    75% {
+        transform: translate(1500%, 0);
+    }
+ 
+}
+       
+

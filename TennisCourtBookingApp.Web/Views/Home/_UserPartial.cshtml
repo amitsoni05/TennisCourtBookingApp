@@ -1,0 +1,133 @@
+﻿@model TennisCourtBookingViewModel
+
+
+
+
+<div class="modal-header" style="background-color:lightblue;">
+    <h5 class="modal-title">@(@Model.IsEdit?"Edit Details":"Registration") </h5>
+
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+
+    <form method="post" id="UserDetails" class="validation-wizard form-horizontal form-material needs-validation" enctype="multipart/form-data">
+
+        <div>
+
+            <input type="text" asp-for="TennisCourtBookingUserModel.UserId" class="form-control" hidden />
+        </div>
+        @if (Model.IsEdit == false)
+        {
+            <div>
+
+                <label class="form-label" asp-for="@Model.Image">User Image</label>
+                <input type="file" accept="image/*" asp-for="@Model.Image" class="form-control" id="SaveImage" onchange="TennisCourtBookingApp.Common.previewImage(this)" />
+
+                <!-- Display the preview image -->
+                <img id="imagePreview" src="#" alt="Image Preview" style="display:none; max-width: 100px; max-height: 100px;" />
+            </div>
+        }
+        @if (Model.IsDelete == true)
+        {
+
+            <div>
+                <label class="form-label" asp-for="TennisCourtBookingUserModel.UserName">User Name</label>
+                <input type="text" asp-for="TennisCourtBookingUserModel.UserName" class="form-control" readonly />
+            </div>
+        }
+        else
+        {
+            <div>
+                <label class="form-label" asp-for="TennisCourtBookingUserModel.UserName">User Name</label>
+                <input type="text" asp-for="TennisCourtBookingUserModel.UserName" class="form-control" id="UserName" placeholder="Enter Name" />
+                <span asp-validation-for="TennisCourtBookingUserModel.UserName" class="text-danger"></span>
+
+            </div>
+        }
+
+        @if (Model.IsDelete == true)
+        {
+            <div>
+                <label class="form-label" asp-for="TennisCourtBookingUserModel.Email">User Email</label>
+                <input type="text" asp-for="TennisCourtBookingUserModel.Email" class="form-control" readonly />
+            </div>
+        }
+        else
+        {
+            <div>
+                <label class="form-label" asp-for="TennisCourtBookingUserModel.Email">User Email</label>
+                <input type="text" asp-for="TennisCourtBookingUserModel.Email" class="form-control" placeholder="Enter Email"/>
+                <span asp-validation-for="TennisCourtBookingUserModel.Email" class="text-danger" id="Email" ></span>
+
+            </div>
+        }
+        @if (Model.IsDelete == true)
+        {
+            <div>
+                <label class="form-label" asp-for="TennisCourtBookingUserModel.Address">User Address</label>
+                <input type="text" asp-for="TennisCourtBookingUserModel.Address" class="form-control" readonly />
+                @*<span asp-validation-for="TennisCourtBookingUserModel.Address" class="text-danger"></span>*@
+
+            </div>
+        }
+        else
+        {
+            <div>
+                <label class="form-label" asp-for="TennisCourtBookingUserModel.Address">User Address</label>
+                <input type="text" asp-for="TennisCourtBookingUserModel.Address" class="form-control" placeholder="Enter Address"/>
+                <span asp-validation-for="TennisCourtBookingUserModel.Address" class="text-danger" id="UserAddress" ></span>
+
+            </div>
+        }
+        @if (Model.IsDelete == true)
+        {
+            <div>
+                <label class="form-label" asp-for="TennisCourtBookingUserModel.PhoneNo">User PhoneNo.</label>
+                <input type="text" asp-for="TennisCourtBookingUserModel.PhoneNo" class="form-control" readonly />
+            </div>
+        }
+        else
+        {
+            <div>
+                <label class="form-label" asp-for="TennisCourtBookingUserModel.PhoneNo">User PhoneNo.</label>
+                <input type="text" asp-for="TennisCourtBookingUserModel.PhoneNo" class="form-control" id="UserPhoneNo" placeholder="Enter PhoneNo." />
+                @*<span asp-validation-for="TennisCourtBookingUserModel.PhoneNo." class="text-danger"></span>*@
+
+            </div>
+        }
+        @if (Model.IsEdit == true)
+        {
+        }
+        else
+        {
+            <div>
+                <label class="form-label" asp-for="TennisCourtBookingUserModel.Password">User Password</label>
+                <input type="text" asp-for="TennisCourtBookingUserModel.Password" class="form-control" id="UserPassword" placeholder="Enter Password" />
+                <span asp-validation-for="TennisCourtBookingUserModel.Password" class="text-danger"></span>
+
+            </div>
+        }
+    </form>
+
+</div>
+<div class="modal-footer" style="background-color: lightblue;">
+
+
+    @if (Model.IsEdit == true)
+    {
+        <button type="button" class="btn btn-primary" onclick="TennisCourtBookingApp.User.UserEditPost()">Update</button>
+        
+        <button type="button" class="btn btn-secondary" onclick="TennisCourtBookingApp.User.UserProfile()">Close</button>
+    }
+
+
+    @if (Model.IsEdit == false && Model.IsUser == true)
+    {
+        @*<button type="button" class="btn btn-primary" onclick="SignUpPost()">Register</button>*@
+        <button type="button" class="btn btn-primary" onclick="TennisCourtBookingApp.Common.SignUpPost()">Register</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    }
+
+
+</div>
+

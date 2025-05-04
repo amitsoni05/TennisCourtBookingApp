@@ -1,0 +1,99 @@
+﻿@model TennisCourtBookingViewModel
+
+@{
+    Layout = "_AdminLayout";
+}
+<html>
+<head>
+
+</head>
+<body>
+
+
+    <div class="modal" id="modalShow" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content" id="modalContent">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-2">
+        </div>
+        <div class="col-8">
+
+            <h2>Tennis Court Details</h2>
+            <h3><a class="nav-link text-dark btn btn-outline-primary" style="font-weight:bold;font-size:large;float:right;" onclick="TennisCourtBookingApp.TennisCourt.AddCourt()">Add Tennis Court</a></h3>
+            <div class="input-group mb-3">
+                <label>Search : </label>
+                <input type="text" id="CourtExtraSearch" style="background: transparent;background-color:transparent;" onkeyup="TennisCourtBookingApp.TennisCourt.GetCourtList(this)" />
+            </div>
+            @*<div class="input-group mb-3">
+                <label>Show entries: </label>
+                <select id="Court_length" class="form-control" onchange="TennisCourtBookingApp.TennisCourt.GetCourtList(this)">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                </select>
+            </div>*@
+
+            <table class="table table-responsive border-1 " id="CourtList">
+                <thead style="font-size:larger">
+                    <tr>
+                        <th>Tennis Court Name</th>
+                        <th>Tennis Court Address</th>
+                        <th>Tennis Court Capacity</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+     
+        
+        <div id="container" style="margin:100px;" class="row">
+            <div id="tennis1" class="col-1">
+
+
+                <img src="~/Images/Tennis2-PNG-HD-Photo.png" style="height:100px;width:70px;" />
+            </div>
+            @*<div id="moveball" class="col-8">*@
+
+                <div  class="col-9">
+                   @*<img src="~/Images/Tennis-PNG-HD-Photo.png" style="height:100px;width:70px;" />*@
+                    <img src="~/Images/tennisball.png" style="height:40px;width:40px;"  id="imge"/>
+
+                </div>
+            @*</div>*@
+            <div id="tennis2" class="col-2">
+
+
+                <img src="~/Images/Tennis-PNG-HD-Photo.png" style="height:100px;width:70px;" />
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+
+
+
+
+@section Scripts{
+
+    <script src="~/js/Custom/TennisCourtBookingApp.TennisCourt.js" asp-append-version="true"></script>
+    <script>
+        $(document).ready(function () {
+            debugger;
+            TennisCourtBookingApp.TennisCourt.GetCourtList();
+
+        });
+    </script>
+}
+
+
+
+
+

@@ -1,0 +1,111 @@
+﻿@model TennisCourtBookingViewModel
+
+@{
+    Layout = "_UserLayout";
+}
+<div class="row">
+
+    <h2>Tennis Court Details</h2>
+    <br />
+    <br />
+    <div class="input-group mb-3">
+        <br />
+        <label>Search : </label>
+        <input type="text" id="UserCourtExtraSearch" style="background: transparent;background-color:transparent;" onkeyup="TennisCourtBookingApp.User.GetCourtListUser(this)" />
+    </div>
+    <div class="col-9">
+        <table class="table" id="CourtListUser" style="background-image: url('@Url.Content("~/images/tennis.jpg")'); background-size: cover; background-position: center; height: 70vh;width:120vh;">
+            <thead>
+                <tr>
+                    <th>Tennis Court Name</th>
+                    <th>City</th>
+                    <th>Capacity</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+        </table>
+    </div>
+
+    <div class="col-3">
+
+
+        @if (TempData.ContainsKey(Model.tempDataKey))
+        {
+            // Display the TempData message
+            <div style="color:red;font-size:large;">@TempData[Model.tempDataKey]</div>
+        }
+
+
+
+
+
+        @if (Model.TempList.Count != 0)
+        {
+
+            <h2>Added Slot</h2>
+            <table class="table" style="border-color:black">
+                @foreach (var slot in Model.TempList)
+                {
+
+
+                    //TempData.Remove(Model.tempDataKey);
+                    int id = slot.TennisCourtBookingModel.TennisCourtId ?? 0;
+                    DateTime bookingDate = slot.TennisCourtBookingModel.BookingDate ?? new DateTime(2020, 1, 1);
+                    TimeSpan bookingTime = slot.TennisCourtBookingModel.BookingTime ?? new TimeSpan(12, 0, 0);
+
+
+                    //var courtDetails = slot.TennisCourtModels.FirstOrDefault(n => n.TennisCourtId == slot.TennisCourtBookingModel.TennisCourtId);
+                    //var courtDetails=slot.TennisCourtModel.firs
+                    //var courtName = courtDetails.TennisCourtName;
+                    //var userName = Model.TennisCourtBookingUserModels.FirstOrDefault(un => un.UserId == details.UserId);
+
+                    <tr>
+                        <td>@slot.TennisCourtModel.TennisCourtName</td>
+                        <td style="height:20px;">@bookingDate.ToString("yyyy-MM-dd")</td>
+                        @*<td>@slot.TennisCourtBookingModel.BookingTime</td>*@
+                        @*<td>@bookingTime.ToString("hh:mm tt")</td>*@
+                        <td>@(DateTime.Today.Add(bookingTime).ToString("hh:mm tt"))</td>
+                        <td></td>
+                        @*<td><button type="button" style="color:red" onclick="DeleteFromTemp(@id,@bookingDate,@bookingTime)">X</button></td>*@
+                        <td><button style="color:red" onclick="TennisCourtBookingApp.Booking.DeleteFromTemp(@id, '@bookingDate.ToString("yyyy-MM-dd")', '@bookingTime.ToString("hh\\:mm")')"><i class="fa-solid fa-trash"></i></button></td>
+
+                    </tr>
+
+                }
+                <br />
+            </table>
+            <button type="button" class="btn btn-primary" onclick="TennisCourtBookingApp.Booking.BookCourtPost()">Submit Booking</button>
+        }
+
+    </div>
+</div>
+@section Scripts{
+    <script src="~/js/Custom/TennisCourtBookingApp.js" asp-append-version="true"></script>
+
+    <script src="~/js/Custom/TennisCourtBookingApp.Common.js" asp-append-version="true"></script>
+    <script src="~/js/Custom/TennisCourtBookingApp.Booking.js" asp-append-version="true"></script>
+    <script src="~/js/Custom/TennisCourtBookingApp.User.js" asp-append-version="true"></script>
+    <script src="~/js/Custom/TennisCourtBookingApp.TennisCourt.js" asp-append-version="true"></script>
+   
+}
+
+
+
+
+
+
+@*<div class="modal" id="modalShow" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content" id="modalContent">
+
+        </div>
+    </div>
+</div>*@
+<div id="modalShow" class="modal fade bs-example-modal-lg" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="modalContent">
+
+        </div>
+    </div>
+</div>

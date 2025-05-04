@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\TennisCourtBookingApp.Web.props" />
+</Project>

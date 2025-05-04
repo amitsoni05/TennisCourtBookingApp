@@ -1,0 +1,99 @@
+﻿@model TennisCourtBookingViewModel
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+<div style="background-image: url('@Url.Content("~/images/popupo.jpg")'); background-size: cover; height: 50vh; color:aliceblue;">
+    <div class="modal-header">
+        <h5 class="modal-title"> Court Details</h5>
+
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body" style="color:aliceblue;">
+        @*@{
+                if (ViewBag.Message != null)
+                {
+                    <p class="bg-danger">@ViewBag.Message</p>
+                }
+            }*@
+        <div>
+            <form asp-action="AddCourt" asp-controller="TennisCourt" method="post" id="TennisCourt" class="validation-wizard form-horizontal form-material needs-validation" enctype="multipart/form-data">
+                @if (Model.IsView == true)
+                {
+                    <div>
+
+                        <input type="text" asp-for="TennisCourtModel.TennisCourtId" class="form-control" hidden />
+                    </div>
+                }
+                @if (Model.IsDelete == true)
+                {
+                    <div>
+                        <label class="form-label" asp-for="TennisCourtModel.TennisCourtName" style="font-size:medium">Tennis Court Name</label>
+                        <input type="text" asp-for="TennisCourtModel.TennisCourtName" class="form-control" readonly />
+                    </div>
+                }
+                else
+                {
+                    <div>
+                        <label class="form-label" asp-for="TennisCourtModel.TennisCourtName">Tennis Court Name</label>
+                        <input type="text" asp-for="TennisCourtModel.TennisCourtName" class="form-control" placeholder="Name.." style=" background-color: rgba(255, 255, 255, 0.5); border: 1px solid #ccc; color: white;" />
+                        <span asp-validation-for="TennisCourtModel.TennisCourtName" class="text-danger"></span>
+                    </div>
+                }
+
+                @if (Model.IsDelete == true)
+                {
+                    <div>
+                        <label class="form-label" asp-for="TennisCourtModel.TennisCourtAddress">Tennis Court Address</label>
+                        <input type="text" asp-for="TennisCourtModel.TennisCourtAddress" class="form-control" readonly />
+
+                    </div>
+                }
+                else
+                {
+                    <div>
+                        <label class="form-label" asp-for="TennisCourtModel.TennisCourtAddress">Tennis Court Address</label>
+                        <input type="text" asp-for="TennisCourtModel.TennisCourtAddress" class="form-control" placeholder="Adddress.." style=" background-color: rgba(255, 255, 255, 0.5); border: 1px solid #ccc; color: white;" />
+                        <span asp-validation-for="TennisCourtModel.TennisCourtAddress" class="text-danger"></span>
+                    </div>
+                }
+                @if (Model.IsDelete == true)
+                {
+                    <div>
+                        <label class="form-label" asp-for="TennisCourtModel.TennisCourtCapacity">Tennis Court Capacity</label>
+                        <input type="text" asp-for="TennisCourtModel.TennisCourtCapacity" class="form-control" readonly />
+
+                    </div>
+                }
+                else
+                {
+                    <div>
+                        <label class="form-label" asp-for="TennisCourtModel.TennisCourtCapacity">Tennis Court Capacity</label>
+                        <input type="number" asp-for="TennisCourtModel.TennisCourtCapacity" class="form-control" placeholder="Capacity.." style=" background-color: rgba(255, 255, 255, 0.5);  border: 1px solid #ccc; color:white;" />
+                        <span asp-validation-for="TennisCourtModel.TennisCourtCapacity" class="text-danger"></span>
+                    </div>
+                }
+            </form>
+        </div>
+
+
+    </div>
+    <div class="modal-footer">
+        @if (Model.IsAdd == true)
+        {
+            <button type="button" class="btn btn-primary" onclick="TennisCourtBookingApp.TennisCourt.AddCourtPost()">Add</button>
+        }
+
+        @if (Model.IsEdit == true)
+        {
+            <button type="button" class="btn btn-primary" onclick="TennisCourtBookingApp.TennisCourt.CourtEditPost()">Update</button>
+        }
+        @if (Model.IsDelete == true)
+        {
+            <button type="button" class="btn btn-danger" onclick="TennisCourtBookingApp.TennisCourt.CourtDeletePost()">Delete</button>
+
+        }
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    </div>
+</div>

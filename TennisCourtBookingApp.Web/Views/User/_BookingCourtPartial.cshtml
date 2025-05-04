@@ -1,0 +1,63 @@
+﻿@model TennisCourtBookingViewModel
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+
+<div class="modal-header" style="background-color:green;">
+    <h5 class="modal-title">Booking</h5>
+
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+    @*@{
+            if (ViewBag.Message != null)
+            {
+                <p class="bg-danger">@ViewBag.Message</p>
+            }
+        }*@
+    <div>
+        <form id="BookTennisCourt" class="validation-wizard form-horizontal form-material needs-validation" enctype="multipart/form-data">
+            <div>
+
+                <input type="text" asp-for="TennisCourtModel.TennisCourtId" class="form-control" hidden />
+
+                <input type="text" asp-for="TennisCourtBookingModel.BookingId" class="form-control" hidden />
+
+            </div>
+            <div>
+                <label class="form-label" asp-for="TennisCourtModel.TennisCourtName">Tennis Court Name</label>
+                <input type="text" asp-for="TennisCourtModel.TennisCourtName" class="form-control" />
+                <span asp-validation-for="TennisCourtModel.TennisCourtName" class="text-danger"></span>
+            </div>
+            <div>
+                <label class="form-label" asp-for="TennisCourtBookingModel.BookingDate">Booking Date</label>
+                <input type="date" asp-for="TennisCourtBookingModel.BookingDate" class="form-control" asp-format="{0:yyyy-MM-dd}" required />
+                <span asp-validation-for="TennisCourtBookingModel.BookingDate" class="text-danger"></span>
+            </div>
+            <div>
+                <label class="form-label" asp-for="TennisCourtBookingModel.BookingTime">Booking Time</label>
+                <input type="time" asp-for="TennisCourtBookingModel.BookingTime" class="form-control" required />
+                <span asp-validation-for="TennisCourtBookingModel.BookingTime" class="text-danger"></span>
+            </div>
+        </form>
+    </div>
+
+
+</div>
+<div class="modal-footer" style="background-color: green;">
+    @if (Model.IsEdit == true)
+    {
+        <button type="button" class="btn btn-primary" onclick="TennisCourtBookingApp.Booking.EditBookingPost()">Update</button>
+    }
+    else
+    {
+        <button type="button" class="btn btn-primary" onclick="TennisCourtBookingApp.Booking.addItemToTempData()">Add</button>
+    }
+
+
+
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+</div>
+

@@ -1,0 +1,49 @@
+﻿@model TennisCourtBookingViewModel
+
+<div class="modal-header" style="background-color:lightgray;">
+    <h4 class="modal-title"> Your Personal Details</h4>
+    <button class="btn  btn-info " onclick="TennisCourtBookingApp.User.DownloadReportPdf()" style="margin-left:400px;"><i class="ti-download"></i>Print</button>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body" style="background-color:lightgray;">
+    <div class="row">
+        <div class="col-5">
+           
+            <div class="card" style="width: 18rem;">
+                <img src="/ExtraFolder/ProfileImage/@Model.TennisCourtBookingUserModel.Image" class="card-img-top" alt="...">
+                @*<button>  <input type="file" asp-for="@Model.Image" class="form-control" id="UpdateImage" onchange="TennisCourtBookingApp.User.UpdateUserImage( @Model.TennisCourtBookingUserModel.UserId)" /></button>*@
+                <input type="file" asp-for="@Model.Image" class="form-control" id="UpdateImage" style="display:none;" onchange="TennisCourtBookingApp.User.UpdateUserImage(this)" />
+                <button type="button" class="btn btn-outline-primary" onclick="TennisCourtBookingApp.User.triggerFileInput()" value="Edit">Change Profile</button>
+                <div class="card-body" style="height:70px;">
+                    <h5 class="card-title">User Id: @Model.TennisCourtBookingUserModel.UserId</h5><hr />
+
+                </div>
+            </div>
+        </div>
+        <div class="col-7 mt-5">
+
+
+            <table class="table" style="border:double solid; border-color:black">
+                <tr><th>Your Name</th><td><h5>@Model.TennisCourtBookingUserModel.UserName</h5></td></tr>
+                <tr><th>Your Email</th><td><h5>@Model.TennisCourtBookingUserModel.Email</h5></td></tr>
+                <tr><th>Your Address</th><td><h5>@Model.TennisCourtBookingUserModel.Address</h5></td></tr>
+                <tr><th>Your PhoneNo.</th><td><h5>@Model.TennisCourtBookingUserModel.PhoneNo</h5></td></tr>
+
+
+            </table>
+
+            <br />
+            <h5>If You Want To Edit Your Details Click Here:</h5>
+            @{
+                int userId = @Model.TennisCourtBookingUserModel.UserId;
+            }
+
+            <button type="button" class="btn btn-primary" onclick="TennisCourtBookingApp.User.UserEditGet(@userId)" value="Edit"><i class="fa-solid fa-pen-to-square"></i></button>
+
+        </div>
+    </div>
+</div>
+<div class="modal-footer" style="background-color:lightgray;">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+   
+</div>

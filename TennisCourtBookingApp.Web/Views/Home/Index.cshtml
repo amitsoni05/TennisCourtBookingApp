@@ -1,0 +1,102 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center" ); height: 100vh;">
+    <h1 class="display-4">Welcome</h1>
+    @*<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>*@
+</div>
+<br />
+<div class="row" style="height:40vh">
+    <div class="col-7">
+        <h2>All India Tennis Association</h2><hr />
+        <p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: medium; line-height: 2.5;">
+            The All India Tennis Association (AITA) (Hindi: अखिल भारतीय टेनिस संघ) is the governing body of tennis in India. It was established in 1920 and affiliated by International Tennis Federation and Asian Tennis Federation.
+
+            All India Tennis Association operates all of the Indian national representative tennis sides,
+            including the India Davis Cup team, the India Fed Cup team and youth sides as well. AITA is also responsible for organising
+            and hosting tennis tournaments within India and scheduling the home international fixtures.
+        </p>
+    </div>
+    <div class="col-5" style="border: double; height: 70vh; background-color: aliceblue; display: flex; flex-direction: column; align-items: center; padding: 20px;">
+
+        <div style="margin-bottom: 2px;">
+            <img src="~/Images/AITA_official_logo.png" style="width: 150px; height: auto;" />
+        </div>
+        <hr />
+
+        <table>
+            <tbody style="width:90%">
+                <tr>
+                    <th>Sport</th>
+                    <td>Tennis</td>
+                </tr>
+
+                <tr>
+                    <th>Abbreviation</th>
+                    <td>:(AITa)</td>
+                </tr>
+
+                <tr>
+                    <th>Founded</th>
+                    <td>March, 1920</td>
+                </tr>
+
+                <tr>
+                    <th>Affiliation</th>
+                    <td>International Tennis Federation</td>
+                </tr>
+
+                <tr>
+                    <th>Regional Affiliation</th>
+                    <td>Asian Tennis Federation</td>
+                </tr>
+
+                <tr>
+                    <th>HeadQuarters</th>
+                    <td>R.K. Khanna Tennis Complex</td>
+                </tr>
+
+                <tr>
+                    <th>Location</th>
+                    <td>African Avenue, Delhi</td>
+                </tr>
+
+                <tr>
+                    <th>President</th>
+                    <td>Anil Jain</td>
+                </tr>
+
+
+            </tbody>
+        </table>
+        <br />
+        <div>
+            <h4>Official WebSite</h4>
+            <a href="https://aitatennis.com/">www.aitatennis.com</a><br />
+        </div>
+        <br />
+        <div style="">
+            <img src="~/Images/Flag_of_India.svg.png" style="height:30px;width:40px" />
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/js/Custom/TennisCourtBookingApp.js" asp-append-version="true"></script>
+
+    <script src="~/js/Custom/TennisCourtBookingApp.Common.js" asp-append-version="true"></script>
+    <script src="~/js/Custom/TennisCourtBookingApp.Booking.js" asp-append-version="true"></script>
+    <script src="~/js/Custom/TennisCourtBookingApp.User.js" asp-append-version="true"></script>
+    <script src="~/js/Custom/TennisCourtBookingApp.TennisCourt.js" asp-append-version="true"></script>
+
+}
+
+
+
+<div id="modalShow" class="modal fade bs-example-modal-lg" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="max-width: 500px; margin: auto; top: 10%; transform: translate(10%);">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="modalContent">
+
+        </div>
+    </div>
+</div>
